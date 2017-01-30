@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-   root 'static#home'
+  root 'static#home'
 
   get '/help', to: 'static#help'
 
