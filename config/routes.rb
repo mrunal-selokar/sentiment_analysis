@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'hotels/new'
+
   root 'static#home'
 
   get '/help', to: 'static#help'
