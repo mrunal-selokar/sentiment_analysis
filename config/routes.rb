@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/help', to: 'static#help'
 
   get '/about', to: 'static#about'
+
+ 
+  resources :hotels
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  
 end

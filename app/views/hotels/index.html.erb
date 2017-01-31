@@ -1,0 +1,10 @@
+<%provide(:title, 'All Hotels')%>
+<h1>All Hotels</h1>
+
+<ul class="hotels">
+	<% @hotels.each do |hotel| %>
+		<li>
+			<%=link_to hotel.name, hotel %>
+		</li>
+	<% end %>
+</ul>

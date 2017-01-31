@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Hotel.create!(name: "Example Hotel", city: "Example city")
+
+20.times do |n|
+
+	name = Faker::Company.name
+	city = Faker::Address.city
+	Hotel.create!(name: name, city: city)
+end

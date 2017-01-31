@@ -96,3 +96,29 @@ footer {
     }
   }
 }
+
+h1{
+      font-size: 2.4em;
+      text-align: center;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 5px;
+      
+    }
+h2{
+  font-size: 1.4em;
+  text-align: center;
+
+}
+
+/* Hotels index */
+
+.hotels {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
