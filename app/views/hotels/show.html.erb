@@ -1,4 +1,3 @@
- 
 <% provide(:title, @hotel.name) %>
 <div class="row">
   <aside class="col-md-4">
@@ -7,6 +6,16 @@
 	<h2> <%= @hotel.city %></h2>
   </aside>
 
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+     
+      <section class="review_form">
+        <%= render 'shared/review_form' %>
+      </section>
+    </aside>
+  </div>
+<% end %>
 
   <div class="col-md-8">
     <% if @hotel.reviews.any? %>

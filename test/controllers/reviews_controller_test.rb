@@ -1,7 +1,21 @@
 require 'test_helper'
 
 class ReviewsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+  	@review = reviews(:good)
+  end
+
+  test "should redirect create when not logged in" do
+  	assert_no_difference 'Review.count' do
+  		post review_path, params: {review: {content: "Very Good"}}
+  	end
+  	assert_redirected_to login_url
+  end
+
+  test "should redirec destroy when not logged in" do
+  	assert_no_difference 'Review.count' do
+  		delete review_path(@review)
+  	end
+  	assert_redirected_to login_url
+  end
 end

@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   #before_action :correct_user, only: :index 
   before_action :admin_user, only: :destroy
   def show
-  	@user =User.find(params[:id])
-    @reviews = @user.reviews.paginate(page: params[:page])
+  	@user = current_user
+    #@reviews = @user.reviews.paginate(page: params[:page])
+    @review = current_user.reviews.build if logged_in?
   end
 
   def index
@@ -40,13 +41,13 @@ class UsersController < ApplicationController
     end
 
     #confirms a logged in user
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "please log in"
-        redirect_to login_url
-      end
-    end
+    #def logged_in_user
+     # unless logged_in?
+    #    store_location
+   #     flash[:danger] = "please log in"
+  #      redirect_to login_url
+ #     end
+#    end
 
    # def correct_user
    #  @user = User.find(params[:id])

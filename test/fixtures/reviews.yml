@@ -1,5 +1,5 @@
-orange:
-  content: "I just ate an orange!"
+good:
+  content: "The hotel is very good!"
   created_at: <%= 10.minutes.ago.to_datetime %>
 
 tau_manifesto:

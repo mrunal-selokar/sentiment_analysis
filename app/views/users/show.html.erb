@@ -8,11 +8,23 @@
       </h1>
     </section>
   </aside>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="review_form">
+        <%= render 'shared/review_form' %>
+      </section>
+    </aside>
+  </div>
+<% end %>
+
+
   <div class="col-md-8">
     <% if @user.reviews.any? %>
       <h3>Reviews (<%= @user.reviews.count %>)</h3>
       <ol class="reviews">
-        <%= render @reviews %>
+        <%= render @review %>
       </ol>
       <%= will_paginate @reviews %>
     <% end %>
