@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'hotels/new'
 
   root 'static#home'
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
   get '/help', to: 'static#help'
 
   get '/about', to: 'static#about'
+
+  get '/signup', to: 'users#new'
 
  
   resources :hotels
