@@ -19,16 +19,6 @@ ActiveRecord::Schema.define(version: 20170201055556) do
     t.string   "city"
   end
 
-  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "content"
-    t.integer  "hotel_id"
-    t.string   "user"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["hotel_id", "created_at"], name: "index_reviews_on_hotel_id_and_created_at", using: :btree
-    t.index ["hotel_id"], name: "index_reviews_on_hotel_id", using: :btree
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
@@ -38,5 +28,4 @@ ActiveRecord::Schema.define(version: 20170201055556) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
-  add_foreign_key "reviews", "hotels"
 end
