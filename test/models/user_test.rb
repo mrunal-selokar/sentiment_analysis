@@ -3,6 +3,8 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 	def setup	
 		@user = User.new(name: "Example user", email: "user@example.com", password: "password", password_confirmation: "password")
+		@hotel = hotels(:example)
+		#@hotel = Hotel.new(name: "example hotel", city: "new city")
 	end 
 
 	test "should be valid" do
@@ -66,4 +68,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
+    test "associated reviews should be destroyed" do
+	    @user.save
+	    @user.reviews.create!(hotel_id: @hotel.id, content: "Very good")
+	    assert_difference 'Review.count', -1 do
+	      @user.destroy
+    	end
+ 	 end
 end

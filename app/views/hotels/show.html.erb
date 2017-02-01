@@ -1,6 +1,20 @@
-<% provide(:title, @hotel.name)%>
+ 
+<% provide(:title, @hotel.name) %>
 <div class="row">
-<h1><%= @hotel.name%></h1>
+  <aside class="col-md-4">
+    <h1><%= @hotel.name%></h1>
 
-<h2> <%= @hotel.city %></h2>
+	<h2> <%= @hotel.city %></h2>
+  </aside>
+
+
+  <div class="col-md-8">
+    <% if @hotel.reviews.any? %>
+      <h3>Reviews (<%= @hotel.reviews.count %>)</h3>
+      <ol class="reviews">
+        <%= render @reviews %>
+      </ol>
+      <%= will_paginate @reviews %>
+    <% end %>
+  </div>
 </div>

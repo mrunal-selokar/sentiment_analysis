@@ -3,6 +3,7 @@ require 'test_helper'
 class HotelTest < ActiveSupport::TestCase
 	def setup
 		@hotel = Hotel.new(name: "example hotel", city: "example city")
+		@user = users(:mrunal)
 	end
 
 	test "should be valid" do
@@ -28,4 +29,12 @@ class HotelTest < ActiveSupport::TestCase
 		@hotel.city = "a"*51
 		assert_not @hotel.valid?
 	end	
+
+	    test "associated reviews should be destroyed" do
+	    @hotel.save
+	    @hotel.reviews.create!(user_id: @user.id, content: "Very good")
+	    assert_difference 'Review.count', -1 do
+	      @hotel.destroy
+    	end
+ 	 end
 end

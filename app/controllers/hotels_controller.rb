@@ -7,5 +7,6 @@ class HotelsController < ApplicationController
   end
   def show
   	@hotel = Hotel.find(params[:id])
+  	@reviews = @hotel.reviews.paginate(page: params[:page])
   end
 end
