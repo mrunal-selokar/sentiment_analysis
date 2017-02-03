@@ -4,9 +4,11 @@ class UsersController < ApplicationController
   #before_action :correct_user, only: :index 
   before_action :admin_user, only: :destroy
   def show
-  	@user = current_user
+  	@user = User.find(params[:id])
     #@reviews = @user.reviews.paginate(page: params[:page])
-    @review = current_user.reviews.build if logged_in?
+    @review = @user.reviews.build if logged_in?
+    @reviews = @user.reviews.paginate(page: params[:page])
+    @feed_items = @user.feed.paginate(page: params[:page])
   end
 
   def index

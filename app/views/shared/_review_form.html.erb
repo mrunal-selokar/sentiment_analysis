@@ -1,7 +1,18 @@
 <%= form_for Review.new do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+
+
   <div class="field">
-    <%= f.text_area :content, placeholder: "Write a review..." %>
+
+   	<div class="dropdown dropdown-toggle">
+
+ 		<%= f.collection_select(:hotel_id, Hotel.all, :id, :name ) if params[:controller] != "hotels" %>
+ 	</div>
+ 	<% if params[:controller] == "hotels" %>
+  	<%= f.hidden_field :hotel_id, :value => params[:id] %> 
+  	<% end %>
+  	<%#= f.hidden_field :user_id, :value => params[:id] %>
+    <%= f.text_area :content, placeholder: "   Write a review..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

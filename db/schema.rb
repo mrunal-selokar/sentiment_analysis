@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201103345) do
+ActiveRecord::Schema.define(version: 20170202130526) do
 
   create_table "hotels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 20170201103345) do
   end
 
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "content",    limit: 65535
+    t.text     "content",     limit: 65535
     t.integer  "user_id"
     t.integer  "hotel_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.decimal  "score",                     precision: 10
+    t.decimal  "total_score",               precision: 10
     t.index ["hotel_id"], name: "index_reviews_on_hotel_id", using: :btree
     t.index ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
