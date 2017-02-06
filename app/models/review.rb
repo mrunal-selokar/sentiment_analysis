@@ -10,16 +10,19 @@ class Review < ApplicationRecord
   validates :hotel_id, presence: true
   validates :content, presence: true, length: {maximum: 140}
 
- before_save :set_sentiment, :set_total
+ before_save :set_sentiment
 
-def set_sentiment
- #	self.sentiment = $analyzer.sentiment(:content) 
-  	self.score = $analyze.score(self.content) 
+	def set_sentiment
+	 #	self.sentiment = $analyzer.sentiment(:content) 
+		  	self.score = $analyze.score(self.content)
+		  	h_id = self.hotel_id
+			hotel = Hotel.find(h_id)
+			hotel.total_score = hotel.total_score + self.score
+			hotel.save  	
+	end
 end
 
-
-def set_total
-	h_id = self.hotel_id
+=begin	h_id = self.hotel_id
 	hotel = Hotel.find(h_id)
 	hotel.total_score = hotel.total_score + self.score
 	hotel.save
@@ -31,4 +34,4 @@ end
    # 	self.score = $analyzer.score(content)
      #end
 
-end
+=end

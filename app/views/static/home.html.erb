@@ -1,13 +1,65 @@
-<%if logged_in? %>
-	
-	<h1>Welcome </h1>
-
-<% else %>
-<div class="center jumbotron">
-	<h1>Welcome to Hotel Advisor</h1>
-	<p>This is home page of this hotel recoomendation system</p>
-
-	<%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+<div class="jumbotron text-center">
+	<%if logged_in? %> 
+  		<h1>Famous Hotels</h1>
+  		<p>find best rated hotels by users</p>
+	<% else %>
+		<h1>Welcome to Hotel Advisor</h1>
+		
+	<% end %>
 </div>
 
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+	  <!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	    	<h3>"Choose best!"<br></h3>
+	    </div>
+	    <div class="item">
+	     	<h3>"Know better!"<br></h3>
+	    </div>
+	    <div class="item">
+	      	<h3>"Go better!"<br></h3>
+	    </div>
+	</div>
+
+	   <!-- Indicators -->
+	  
+	<ol class="carousel-indicators">
+	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#myCarousel" data-slide-to="1"></li>
+	    <li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+
+	  <!-- Left and right controls -->
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	</a>
+</div>
+
+
+
+<% if !logged_in? %>
+
+
+<div class="container">
+    <div class="container text-center">
+<%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
+<% else %>
+	<ul class="hotels">
+	<% @hotels = Hotel.all %>
+	<% @hotels.each do |hotel| %>
+		<li>
+			<%=link_to hotel.name, hotel %>        |        
+			<%= hotel.reviews.count %> Reviews
+		</li>
+	<% end %>
+	</ul>
+ </div>
 <% end %>
+

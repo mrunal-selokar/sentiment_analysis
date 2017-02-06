@@ -5,7 +5,6 @@
   <div class="field">
 
    	<div class="dropdown dropdown-toggle">
-
  		<%= f.collection_select(:hotel_id, Hotel.all, :id, :name ) if params[:controller] != "hotels" %>
  	</div>
  	<% if params[:controller] == "hotels" %>

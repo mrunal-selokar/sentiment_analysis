@@ -12,10 +12,5 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   	assert_redirected_to login_url
   end
 
-  test "should redirec destroy when not logged in" do
-  	assert_no_difference 'Review.count' do
-  		delete review_path(@review)
-  	end
-  	assert_redirected_to login_url
-  end
+
 end

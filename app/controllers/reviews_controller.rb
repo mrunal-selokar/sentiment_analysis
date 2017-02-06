@@ -1,13 +1,13 @@
 class ReviewsController < ApplicationController
 
-	before_action :logged_in_user, only: [:create, :destroy]
+	before_action :logged_in_user, only: [:create]
 
 	def create
 		@review = current_user.reviews.build(review_params)
 		if @review.save
 			hotel = Hotel.find(params[:review][:hotel_id])
 			flash[:success] = "Review posted!"
-			if params[:controller] == "hotel"
+			if params[:controller] != "users"
 				redirect_to hotel_path(hotel)
 			else
 				redirect_to user_path(current_user)
@@ -16,9 +16,6 @@ class ReviewsController < ApplicationController
 			render 'static/home'
 		end
 	
-	end
-
-	def destroy
 	end
 
 	private

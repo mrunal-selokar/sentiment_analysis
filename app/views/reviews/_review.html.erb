@@ -1,5 +1,5 @@
 <li id="review-<%=review.id %>">
-	<%= link_to gravatar_for(review.user,size: 50), review.user %>
+	<%= link_to gravatar_for(review.user,size: 30), review.user %>
 	<span class="user"><%= link_to review.user.name, review.user %></span> |
 	<span class="hotel"><%= link_to review.hotel.name, review.hotel %></span>
 	<span class="content"><%= review.content %></span>

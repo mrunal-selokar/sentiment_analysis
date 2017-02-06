@@ -21,7 +21,7 @@ class ReviewTest < ActiveSupport::TestCase
   	assert_not @review.valid?
   end
 
-    test "content should be present" do
+  test "content should be present" do
     @review.content = "   "
     assert_not @review.valid?
   end

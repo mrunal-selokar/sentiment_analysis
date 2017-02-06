@@ -1,23 +1,26 @@
 <% provide(:title, @user.name) %>
 <% if logged_in? %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="review_form">
-        <%= render 'shared/review_form' %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.name %> <br>
+        </h1>
+        <h4>
+           <%= @user.reviews.count %>  Reviews
+        </h4>
       </section>
-  </aside>
+      <% if @user == current_user %>
+          <section class="review_form">
+            <%= render 'shared/review_form' %>
+          </section>
+      <% end %>
+    </aside>
 
-   <div class="col-md-8">
-      <h3>Reviews</h3>
-      <%= render 'shared/feed' %>
+    <div class="col-md-8">
+        <h3>Reviews</h3>
+        <%= render 'shared/feed' %>
     </div>
-
-
-</div>
+  </div>
 <% end %>
