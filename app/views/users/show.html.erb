@@ -16,6 +16,14 @@
             <%= render 'shared/review_form' %>
           </section>
       <% end %>
+      <% if current_user.admin? %>
+      <br>
+      <h1> Add a new hotel</h1>
+          <section class="review_form">
+            <%= render 'shared/hotel_form' %>
+          </section>
+      <% end %>
+
     </aside>
 
     <div class="col-md-8">
