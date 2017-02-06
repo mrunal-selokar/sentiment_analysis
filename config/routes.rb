@@ -7,21 +7,21 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  get '/help', to: 'static#help'
+  get    '/help',   to: 'static#help'
 
-  get '/about', to: 'static#about'
+  get    '/about',  to: 'static#about'
 
-  get '/signup', to: 'users#new'
+  get    '/signup', to: 'users#new'
 
-  get    '/login',   to: 'sessions#new'
+  get    '/login',  to: 'sessions#new'
   
-  post   '/login',   to: 'sessions#create'
+  post   '/login',  to: 'sessions#create'
   
-  delete '/logout',  to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
  
   resources :hotels
   resources :users
-  resources :reviews, only: [:create, :destroy]
+  resources :reviews, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  
 end

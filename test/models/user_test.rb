@@ -74,5 +74,5 @@ class UserTest < ActiveSupport::TestCase
 	    assert_difference 'Review.count', -1 do
 	      @user.destroy
     	end
- 	 end
+ 	end
 end

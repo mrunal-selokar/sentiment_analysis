@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @review = @user.reviews.build if logged_in?
     @reviews = @user.reviews.paginate(page: params[:page])
     @feed_items = @user.feed.paginate(page: params[:page])
+
   end
 
   def index
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		log_in @user
-  		flash[:success] = "Welcome!"
+  		flash[:success] = "Welcome to hotel advisor!"
   		redirect_to @user
   	else
   		render 'new'

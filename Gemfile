@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'bcrypt',         '3.1.11'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'faker',          '1.6.6'
@@ -43,6 +43,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'mysql2', '>= 0.3.18', '< 0.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
@@ -61,6 +62,10 @@ group :test do
   gem 'minitest-reporters',       '1.1.9'
   gem 'guard',                    '2.13.0'
   gem 'guard-minitest',           '2.4.4'
+end
+
+group :production do
+  gem 'pg', '0.12.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

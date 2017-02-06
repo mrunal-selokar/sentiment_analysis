@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
 				redirect_to user_path(current_user)
 			end
 		else
+			@feed_items = []
 			render 'static/home'
 		end
 	

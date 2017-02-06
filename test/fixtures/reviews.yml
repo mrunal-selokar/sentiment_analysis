@@ -17,3 +17,11 @@ most_recent:
   content: "Writing a short test"
   created_at: <%= Time.zone.now.to_datetime %>
   user: mrunal
+
+
+<% 30.times do |n| %>
+review_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago.to_datetime %>
+  user: mrunal
+<% end %>

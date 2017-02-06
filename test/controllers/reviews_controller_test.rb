@@ -7,7 +7,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect create when not logged in" do
   	assert_no_difference 'Review.count' do
-  		post review_path, params: {review: {content: "Very Good"}}
+  		post reviews_path, params: {review: {content: "Very Good"}}
   	end
   	assert_redirected_to login_url
   end
