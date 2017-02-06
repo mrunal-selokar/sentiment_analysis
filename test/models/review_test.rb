@@ -31,7 +31,7 @@ class ReviewTest < ActiveSupport::TestCase
     assert_not @review.valid?
   end
 
-    test "order should be most recent first" do
+  test "order should be most recent first" do
     assert_equal reviews(:most_recent), Review.first
   end
 
