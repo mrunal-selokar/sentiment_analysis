@@ -39,25 +39,21 @@
 	</a>
 </div>
 
-
-
-<% if !logged_in? %>
-
-
 <div class="container">
-    <div class="container text-center">
-<%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
-	</div>
-<% else %>
-	<ul class="hotels">
-	<% @hotels = Hotel.all %>
-	<% @hotels.each do |hotel| %>
-		<li>
-			<%=link_to hotel.name, hotel %>        |        
-			<%= hotel.reviews.count %> Reviews
-		</li>
+	<% if !logged_in? %>
+	    <div class="container text-center">
+		<%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+		</div>
+	<% else %>
+		<ul class="hotels">
+		<% @hotels = Hotel.all %>
+		<% @hotels.each do |hotel| %>
+			<li>
+				<%=link_to hotel.name, hotel %>        |        
+				<%= hotel.reviews.count %> Reviews
+			</li>
+		<% end %>
+		</ul>
 	<% end %>
-	</ul>
- </div>
-<% end %>
+</div>
 

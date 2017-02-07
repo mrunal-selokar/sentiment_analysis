@@ -342,12 +342,14 @@ span.picture {
     line-height: 1.42857143 !important;
     letter-spacing: 4px;
     border-radius: 0;
+    text-indent: 0.5em;
 }
 
 .navbar li a, .navbar .navbar-brand {
     color: #fff  !important;
-    background-color: #474e5d;
+    
 }
+
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #474e5d !important;
@@ -356,7 +358,16 @@ span.picture {
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
-    color: #474e5d !important;
+    color: #fff !important;
+}
+
+.dropdown-menu li a{
+    background-color: #fff !important;
+      color: #000 !important;
+}
+.dropdown-menu li a:hover {
+    background-color: #000 !important;
+      color: #fff !important;
 }
 
 .debug_dump {

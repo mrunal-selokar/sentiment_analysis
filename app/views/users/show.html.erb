@@ -8,7 +8,7 @@
           <%= @user.name %> <br>
         </h1>
         <h4>
-           <%= @user.reviews.count %>  Reviews
+          <span class="badge"><%= @user.reviews.count %></span> Reviews
         </h4>
       </section>
       <% if @user == current_user %>
