@@ -11,7 +11,7 @@
   </aside>
 
    <div class="col-md-8">
-      <h3> <span class="badge"><%= @hotel.reviews.count %></span> Reviews</h3>
+      <h3> <%= @hotel.reviews.count %> Reviews <span class="glyphicon glyphicon-comment"> </span></h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
