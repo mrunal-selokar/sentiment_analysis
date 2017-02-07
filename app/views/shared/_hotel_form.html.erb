@@ -1,5 +1,5 @@
-<%= form_for Hotel.new do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<%= form_for @hotel do |f| %>
+  <%= render 'shared/error_messages', object: @hotel %>
 
  <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>

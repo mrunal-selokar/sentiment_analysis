@@ -15,4 +15,5 @@
     <%= f.text_area :content, placeholder: "   Write a review..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-success" %>
+  <%= f.hidden_field :controller, :value => params[:controller] %>
 <% end %>

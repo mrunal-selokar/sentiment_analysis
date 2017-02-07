@@ -7,14 +7,19 @@ class ReviewsController < ApplicationController
 		if @review.save
 			hotel = Hotel.find(params[:review][:hotel_id])
 			flash[:success] = "Review posted!"
-			if params[:controller] != "users"
+			if params[:review][:controller] == 'hotels'
 				redirect_to hotel_path(hotel)
 			else
 				redirect_to user_path(current_user)
 			end
 		else
 			@feed_items = []
-			render 'static/home'
+      		flash[:danger] = "Fields can't be empty"
+      		if params[:review][:controller] == 'hotels'
+				redirect_to hotel_path(hotel)
+			else
+				redirect_to user_path(current_user)
+			end
 		end
 	
 	end

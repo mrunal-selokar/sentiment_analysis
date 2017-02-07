@@ -12,6 +12,7 @@ class Review < ApplicationRecord
 
  before_save :set_sentiment
 
+
 	def set_sentiment
 	 #	self.sentiment = $analyzer.sentiment(:content) 
 		  	self.score = $analyze.score(self.content)
@@ -20,6 +21,7 @@ class Review < ApplicationRecord
 			hotel.total_score = hotel.total_score + self.score
 			hotel.save  	
 	end
+	
 end
 
 =begin	h_id = self.hotel_id

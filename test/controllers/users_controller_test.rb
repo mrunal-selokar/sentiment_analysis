@@ -1,11 +1,13 @@
 require 'test_helper'
 
-def setup
-	@user = users(:mrunal)
-	@other_user = users(:fake)
-end
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  
+  def setup
+  @user = users(:mrunal)
+  @other_user = users(:fake)
+end
+
   
   test "should get new" do
     get signup_path

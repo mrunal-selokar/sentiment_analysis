@@ -25,6 +25,9 @@ class HotelsController < ApplicationController
     if @hotel.save
       flash[:success] = "New hotel added!"
       redirect_to hotels_path
+    else
+      flash[:danger] = "Fields can't be empty"
+      redirect_to current_user
     end
   end
 

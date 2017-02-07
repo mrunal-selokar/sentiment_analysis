@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @review = @user.reviews.build if logged_in?
     @reviews = @user.reviews.paginate(page: params[:page])
     @feed_items = @user.feed.paginate(page: params[:page])
+    @hotel = Hotel.new
   end
 
   def index
