@@ -4,10 +4,13 @@
 </div>
 <ul class="hotels">
 	<% @hotels.each do |hotel| %>
-			<li>
-			
-			<%=link_to hotel.name, hotel %>
-			</li>
+		<div class="row">
+        	<div class="col-sm-9">
+          		<div class="well">	
+					<%=link_to hotel.name, hotel %>
+				</div>
+			</div>
+		</div>
 		
 	<% end %>
 </ul>
