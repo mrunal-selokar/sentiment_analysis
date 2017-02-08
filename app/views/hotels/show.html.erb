@@ -4,8 +4,8 @@
   <aside class="col-md-4">
 
     <h1><%= @hotel.name%></h1>
-	  <h2> <%= @hotel.city %></h2>
-    <h2>Ranked <%= @hotel.rank.ordinalize %> by users</h2>
+	  <h2> <span class=" glyphicon glyphicon-map-marker"> </span> <%= @hotel.city %></h2>
+    <h2> <span class="glyphicon glyphicon-certificate"></span> Ranked <%= @hotel.rank.ordinalize %> by users</h2>
     <section class="review_form">
         <%= render 'shared/review_form' %>
     </section>
@@ -19,4 +19,3 @@
   </div>
 <% end %>
 
- 
