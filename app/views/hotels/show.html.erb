@@ -5,7 +5,7 @@
 
     <h1><%= @hotel.name%></h1>
 	  <h2> <%= @hotel.city %></h2>
-    <h2>Ranked <div class="rank"><%= @hotel.rank %> </div>by users</h2>
+    <h2>Ranked <div class="rank"><%= @hotel.rank.ordinalize %> </div>by users</h2>
     <section class="review_form">
         <%= render 'shared/review_form' %>
     </section>
@@ -13,7 +13,7 @@
   </aside>
 
    <div class="col-md-8">
-      <h3> <%= @hotel.reviews.count %> Reviews <span class="glyphicon glyphicon-comment"> </span></h3>
+      <h3><%= pluralize(@hotel.reviews.count, 'Review') %> <span class="glyphicon glyphicon-comment"> </span></h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
