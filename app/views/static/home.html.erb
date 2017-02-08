@@ -46,7 +46,7 @@
 		<% render 'shared/rank' %>
 		<% @hotels.each do |hotel| %>
 			<li>
-				<div class="rank"> <%= hotel.rank %> <%=link_to hotel.name, hotel %>  </div>              
+				<div class="rank"> <%= hotel.rank %> <span class="glyphicon glyphicon-certificate"></span> <%=link_to hotel.name, hotel %>  </div>              
 				<%= pluralize( hotel.reviews.count, 'Review' )%>
 			</li>
 		<% end %>

@@ -18,7 +18,7 @@
       <% end %>
       <% if current_user.admin? && @user== current_user %>
       <br>
-      <h2> Add a new hotel</h2>
+      <h2><span class="glyphicon glyphicon-plus"> </span> Add a new hotel</h2>
           <section class="review_form">
             <%= render 'shared/hotel_form' %>
           </section>

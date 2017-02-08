@@ -37,6 +37,9 @@ section {
 
 textarea {
   resize: vertical;
+  &:hover{
+    box-shadow: 5px 5px 40px rgba(0,0,0, .2);
+  }
 }
 
 input{
@@ -208,6 +211,8 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+  &:hover{
+  box-shadow: 5px 5px 40px rgba(0,0,0, .2);}
 }
 
 #error_explanation {

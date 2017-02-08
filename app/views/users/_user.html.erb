@@ -5,7 +5,9 @@
   	<span class="glyphicon glyphicon-user"></span> 
   <% end %>
   <% if current_user.admin? && !current_user?(user) %>
+  <span class="glyphicon glyphicon-trash"></span>
  | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %><span class="glyphicon glyphicon-trash"></span>
+                               data: { confirm: "You sure?" } %>
+
   <% end %>
 </li>
