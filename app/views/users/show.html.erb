@@ -16,7 +16,7 @@
             <%= render 'shared/review_form' %>
           </section>
       <% end %>
-      <% if current_user.admin? %>
+      <% if current_user.admin? && @user== current_user %>
       <br>
       <h2> Add a new hotel</h2>
           <section class="review_form">
