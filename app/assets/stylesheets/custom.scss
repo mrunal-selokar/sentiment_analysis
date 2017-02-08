@@ -14,7 +14,7 @@ $gray-medium-light: #eaeaea;
 .jumbotron {
     background-color: #474e5d; /* Orange */
     color: #ffffff;
-    background-image:url(http://www.pixelstalk.net/wp-content/uploads/2016/10/Hotel-Backgrounds-For-Desktop-620x381.jpg);
+    background-image:url(http://www.pixelstalk.net/wp-content/uploads/2016/10/Hotel-Backgrounds-620x388.jpg);
 
 }
 .container-fluid {
@@ -307,11 +307,11 @@ span.picture {
 
 .carousel-control.right, .carousel-control.left {
     background-image: none;
-    color: #474e5d;
+    color: #fff;
 }
 
 .carousel-indicators li {
-    border-color: #474e5d;
+    border-color: #fff;
 }
 
 .carousel-indicators li.active {
@@ -378,3 +378,7 @@ span.picture {
   @include box_sizing;
 }
 
+.rank{
+  font-family: cursive;
+  font-size: 25px;
+}

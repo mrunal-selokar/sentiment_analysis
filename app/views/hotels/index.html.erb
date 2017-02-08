@@ -1,3 +1,6 @@
+
+<% render 'shared/rank' , hotels: @hotels %>
+
 <%provide(:title, 'All Hotels')%>
 <div class="jumbotron text-center">
 <h1>All Hotels</h1>
@@ -6,8 +9,8 @@
 	<% @hotels.each do |hotel| %>
 		<div class="row">
         	<div class="col-sm-9">
-          		<div class="well">	
-					<%=link_to hotel.name, hotel %>
+          		<div class="well">
+          			<div class="rank"> <%= hotel.rank %> <%=link_to hotel.name, hotel %>  </div>
 				</div>
 			</div>
 		</div>

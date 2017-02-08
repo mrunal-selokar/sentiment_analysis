@@ -1,0 +1,7 @@
+
+<%= index = 1 %>
+<% @hotels.each do |hotel| %>
+	<%= hotel.rank = index %>
+	<%= hotel.save %>
+	<%= index+=1 %>
+<% end %> 

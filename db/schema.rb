@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170203072434) do
+ActiveRecord::Schema.define(version: 20170208055411) do
 
   create_table "hotels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170203072434) do
     t.datetime "updated_at",             null: false
     t.string   "city"
     t.float    "total_score", limit: 24
+    t.integer  "rank"
     t.index ["total_score"], name: "index_hotels_on_total_score", using: :btree
   end
 

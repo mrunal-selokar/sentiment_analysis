@@ -43,9 +43,13 @@
 	<% else %>
 		<ul class="hotels">
 		<% @hotels = Hotel.all %>
+		<% render 'shared/rank' %>
 		<% @hotels.each do |hotel| %>
 			<li>
-				<%=link_to hotel.name, hotel %>        |        
+
+
+				<div class="rank"> <%= hotel.rank %> <%=link_to hotel.name, hotel %>  </div>
+				              
 				<%= hotel.reviews.count %> Reviews
 			</li>
 		<% end %>
