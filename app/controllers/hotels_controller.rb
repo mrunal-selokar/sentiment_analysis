@@ -1,6 +1,4 @@
 class HotelsController < ApplicationController
-  def new
-  end
 
   def index
   	@hotels = Hotel.all
@@ -13,10 +11,8 @@ class HotelsController < ApplicationController
     @feed_items = @hotel.feed.paginate(page: params[:page])
   end
 
-
   def new
     @hotel = Hotel.new
-
   end
 
   def create
@@ -31,8 +27,8 @@ class HotelsController < ApplicationController
     end
   end
 
-
  private
+
     def hotel_params
       params.require(:hotel).permit(:name, :city)
     end

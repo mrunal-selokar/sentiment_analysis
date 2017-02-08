@@ -16,7 +16,7 @@ class HotelTest < ActiveSupport::TestCase
 	end
 
 	test "name should not be too long" do
-		@hotel.name = "a"*101
+		@hotel.name = "a" * 101
 		assert_not @hotel.valid?
 	end
 
@@ -26,7 +26,7 @@ class HotelTest < ActiveSupport::TestCase
 	end
 
 	test "city should not be too long" do
-		@hotel.city = "a"*51
+		@hotel.city = "a" * 51
 		assert_not @hotel.valid?
 	end	
 
@@ -36,5 +36,5 @@ class HotelTest < ActiveSupport::TestCase
 	    assert_difference 'Review.count', -1 do
 	      @hotel.destroy
     	end
- 	 end
+ 	end
 end

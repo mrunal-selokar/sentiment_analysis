@@ -2,14 +2,14 @@ require 'test_helper'
 
 class ReviewTest < ActiveSupport::TestCase
 	def setup
-		@user = users(:mrunal)
+	  @user = users(:mrunal)
 		@hotel = hotels(:example)
-		@review = @user.reviews.build(content: "Very good", hotel_id: @hotel.id)
+		@review = @user.reviews.build(content: 'Very good', hotel_id: @hotel.id)
 	end
 
 	test "should be valid" do
     	assert @review.valid?
-  	end
+  end
 
   test "user id should be present" do
     @review.user_id = nil
@@ -31,8 +31,7 @@ class ReviewTest < ActiveSupport::TestCase
     assert_not @review.valid?
   end
 
-  test "order should be most recent first" do
+  test 'order should be most recent first' do
     assert_equal reviews(:most_recent), Review.first
   end
-
 end
