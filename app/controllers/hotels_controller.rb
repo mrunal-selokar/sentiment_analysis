@@ -1,7 +1,7 @@
 class HotelsController < ApplicationController
 
   def index
-  	@hotels = Hotel.all
+  	@hotels = Hotel.search(params[:search])
   end
   
   def show
