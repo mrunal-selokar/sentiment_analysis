@@ -4,8 +4,23 @@
   <aside class="col-md-4">
 
     <h1><%= @hotel.name%></h1>
-	  <h2> <span class=" glyphicon glyphicon-map-marker"> </span> <%= @hotel.city %></h2>
-    <h2> <span class="glyphicon glyphicon-certificate"></span> Ranked <%= @hotel.rank.ordinalize %> by customers</h2>
+	  <h2> <%= image_tag("map.png", :alt => "map") %> <%= @hotel.city %></h2>
+    <h2> <span class="glyphicon glyphicon-certificate"></span> Ranked <%= @hotel.rank.ordinalize %> by customers</h2><br>
+    Amenities : 
+    <br>
+    <div class="amenity">
+    <%= image_tag("wifi.png", :alt => "wifi") %>
+    <%= image_tag("tv.png", :alt => "tv") %>
+    <%= image_tag("service.png", :alt => "service") %>
+    <%= image_tag("swimming.png", :alt => "pool") %>
+    <%= image_tag("ac.png", :alt => "ac") %>
+    <%= image_tag("carts.png", :alt => "room_service") %>
+    <%= image_tag("food.png", :alt => "food") %>
+    <%= image_tag("parking.png", :alt => "parking") %>
+    </div>
+
+    <span class="glyphicons glyphicons-wifi"></span>
+
     <section class="review_form">
         <%= render 'shared/review_form' %>
     </section>

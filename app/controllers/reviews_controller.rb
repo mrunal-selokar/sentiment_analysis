@@ -4,8 +4,8 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = current_user.reviews.build(review_params)
+		hotel = Hotel.find(params[:review][:hotel_id])
 		if @review.save
-			hotel = Hotel.find(params[:review][:hotel_id])
 			flash[:success] = "Review posted!"
 			if params[:review][:controller] == 'hotels'
 				redirect_to hotel_path(hotel)
@@ -29,6 +29,4 @@ class ReviewsController < ApplicationController
 	def review_params
 		params.require(:review).permit(:content, :hotel_id)
 	end
-
 end
-
