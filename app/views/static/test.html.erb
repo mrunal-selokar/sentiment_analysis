@@ -1,10 +1,12 @@
 <% provide(:title, @hotel.name) %>
 <% if logged_in? %>
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-4 well">
     <div class="well">
        <h1><%= @hotel.name%></h1>
       <h2> <%= image_tag("map.png", :alt => "map") %> <%= @hotel.city %></h2>   
+    </div>
+    <div class="well">
       <h2> <span class="glyphicon glyphicon-certificate"></span> Ranked <%= @hotel.rank.ordinalize %> by customers</h2><br>
       <div class="progress">
           <div class="progress-bar" role="progressbar" style="width:40%; background-color:#00FF00" data-toggle="tooltip" title="Positive">
@@ -33,14 +35,13 @@
       </section>
     </div>
   </div>
-  <div class="col-sm-5">
+  <div class="col-sm-6">
       <h3><%= pluralize(@hotel.reviews.count, 'Review') %> <small><span class="glyphicon glyphicon-comment"> </span></small></h3>
       <%= render 'shared/feed' %>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-2 well">
     <div class="thumbnail">
-      <p>Photos:</p>
-      <%= image_tag("b3.jpeg", :alt => "Hotel", :style =>{'width' => "400", 'height'=>"300"}) %>
+      <img src="wifi.png" alt="Paris" width="400" height="300">
       <p>interior</p>
     </div>
   </div>

@@ -12,22 +12,29 @@
         </h4>
       </section>
       <% if @user == current_user %>
+        <ul class="nav nav-tabs">
+          <li><a data-toggle="tab" href="#reviewform">Review a Hotel</a></li>
+          <% if current_user.admin?%>
+          <li><a data-toggle="tab" href="#hotelform">Add New Hotel</a></li><% end %>
+        </ul>
+        <div class="tab-content">
+        <div id="reviewform" class="tab-pane fade">
           <section class="review_form">
             <%= render 'shared/review_form' %>
           </section>
-      <% end %>
-      <% if current_user.admin? && @user== current_user %>
-      <br>
-      <h2><span class="glyphicon glyphicon-plus"> </span> Add a new hotel</h2>
+        </div>
+        <div id="hotelform" class="tab-pane fade">
           <section class="review_form">
             <%= render 'shared/hotel_form' %>
           </section>
+        </div>
+      </div>
       <% end %>
 
     </aside>
 
     <div class="col-md-8">
-        <h3>Reviews <span class="glyphicon glyphicon-comment"> </span></h3>
+        <h3>Reviews <i class="fa fa-comments-o" aria-hidden="true"></i></h3>
         <%= render 'shared/feed' %>
     </div>
   </div>

@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -9,10 +10,12 @@ $gray-medium-light: #eaeaea;
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;
 }
-
+.well{
+  background-color: #F8F8F8;
+}
 /* universal */
 .jumbotron {
-    background-color: #474e5d; /* Orange */
+    background-color: #474e5d; /* dark blue */
     color: #ffffff;
     background-image:url(http://www.pixelstalk.net/wp-content/uploads/2016/10/Hotel-Backgrounds-620x388.jpg);
 
@@ -23,8 +26,17 @@ $gray-medium-light: #eaeaea;
 
 .btn {
     margin: 15px 0;
-    background-color: #474e5d;
+    background: #000;
     color: #fff;
+    border-radius: 0;
+  }
+  .btn:hover {
+      box-shadow: 1px 2px 5px #000000;
+      color: #fff;
+   }
+  .modal-header, h4, .close {
+      text-align: center;
+      font-size: 30px;
   }
 
 body {
@@ -208,8 +220,6 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
-  &:hover{
-  box-shadow: 5px 5px 40px rgba(0,0,0, .2);}
 }
 
 #error_explanation {
@@ -386,4 +396,7 @@ span.picture {
 }
 .amenity{
 
+}
+.modal-header{
+  background-color:#eee;
 }

@@ -1,56 +1,78 @@
 <div class="jumbotron text-center"> 
-	<%if logged_in? %> 
-  		<h1>Top Rated Hotels</h1>
-  		<p>find best rated hotels by users</p>
-	<% else %>
-		<h1>Welcome to Hotel Advisor</h1>
-	<% end %>
+	<div class="container">
+		<%if logged_in? %> 
+	  		<h1>Top Rated Hotels</h1>
+	  		<p>find best rated hotels by users</p>
+		<% else %>
+			<h1>Welcome to Hotel Advisor</h1>
+		<% end %>
+	</div>
 	<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
 	  <!-- Wrapper for slides -->
-	<div class="carousel-inner" role="listbox">
-	    <div class="item active">
-	    	<h3>"Choose best!"</h3>
-	    </div>
-	    <div class="item">
-	     	<h3>"Know better!"</h3>
-	    </div>
-	    <div class="item">
-	      	<h3>"Go better!"</h3>
-	    </div>
-	</div>
-	   <!-- Indicators -->
+		<div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		    	<h3>"Choose best!"</h3>
+		    </div>
+		    <div class="item">
+		     	<h3>"Know better!"</h3>
+		    </div>
+		    <div class="item">
+		      	<h3>"Go better!"</h3>
+		    </div>
+		</div>
+	    <!-- Indicators -->
 	  	<ol class="carousel-indicators">
-	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	    <li data-target="#myCarousel" data-slide-to="1"></li>
-	    <li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
-	  <!-- Left and right controls -->
-	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-	</a>
-	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
-	</a>
-</div>
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+	    <!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		</a>
+	</div>
 </div>
 <div class="container">
 	<% if !logged_in? %>
-	    <div class = "container text-center">
-		<%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+	    <div class="container text-center">
+            <!-- Trigger the modal with a button -->
+    		<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#signUpPage">Become a Member</button>
+
+  			<!-- Modal -->
+  			<div class="modal fade" id="signUpPage" role="dialog">
+    			<div class="modal-dialog modal-lg">
+    
+      				<!-- Modal content-->
+      				<div class="modal-content">
+        				<div class="modal-header" style="padding: 35px 50px;">
+          					<button type="button" class="close" data-dismiss="modal">&times;</button>
+          					<h4 class="modal-title"><br>Sign Up Now!</h4>
+        				</div>
+        				<div class="modal-body" style="padding: 40px 50px;">
+          					<%= render :file => 'users/new.html.erb' %>
+        				</div>
+      				</div>
+    			</div>
+  			</div>
 		</div>
 	<% else %>
-		<ul class="hotels">
 		<% @hotels = Hotel.all %>
 		<% render 'shared/rank' %>
-		<% @hotels.each do |hotel| %>
-			<li>
-				<div class="rank"> <%= hotel.rank %> <span class="glyphicon glyphicon-certificate"></span> <%=link_to hotel.name, hotel %>  </div>              
-				<%= pluralize( hotel.reviews.count, 'Review' )%>
-			</li>
-		<% end %>
-		</ul>
+		<div class="panel-group">
+			<% @hotels.each do |hotel| %>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="rank"> <%= hotel.rank %> <span class="glyphicon glyphicon-certificate"></span> <%=link_to hotel.name, hotel %>
+						</div>
+		        	</div>
+		        	<div class="panel-body"><%= pluralize( hotel.reviews.count, 'Review' )%></div>
+				</div>
+			<% end %>
+		</div>
 	<% end %>
 </div>
-

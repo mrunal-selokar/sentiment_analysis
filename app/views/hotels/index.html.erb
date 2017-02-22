@@ -5,12 +5,12 @@
 <div class="jumbotron text-center">
 <h1>All Hotels</h1>
 </div>
-		<%= form_tag hotels_path, :method =>'get' do %>
-			<p>
-				<%= text_field_tag :search ,params[:search]%>
-				<%= submit_tag "Search", :name =>nil %>
-			</p>
-		<% end %>
+<div class="row">
+<%= form_tag hotels_path, :method =>'get' do %>
+		<%= text_field_tag :search ,params[:search], placeholder: ' Find a Hotel'%>
+		<%= submit_tag "Search" , :name =>nil %>
+<% end %>
+</div>
 <ul class="hotels">
 	<% @hotels.each do |hotel| %>
 		<div class="row">
