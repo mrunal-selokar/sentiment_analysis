@@ -14,7 +14,7 @@
   	<span class="glyphicon glyphicon-edit"></span>
 
     <br>
-    <%= f.text_area :content, placeholder: "   Write a review..." %>
+    <%= f.text_area :content, placeholder: "   Write a review...",required: "true" %>
   </div>
   <%= f.submit "Post", class: "btn" %>
   <%= f.hidden_field :controller, :value => params[:controller] %>

@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 				redirect_to user_path(current_user)
 			end
 		else
-			@feed_items = []
+			
       		flash[:danger] = "Fields can't be empty"
       		if params[:review][:controller] == 'hotels'
 				redirect_to hotel_path(hotel)
