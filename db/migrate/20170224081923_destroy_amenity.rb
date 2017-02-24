@@ -1,5 +1,0 @@
-class DestroyAmenity < ActiveRecord::Migration[5.0]
-  def change
-  	drop_table :amenities
-  end
-end
