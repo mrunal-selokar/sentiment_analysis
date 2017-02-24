@@ -17,7 +17,6 @@ class HotelsController < ApplicationController
 
   def create
     @hotel = Hotel.new(hotel_params)
-    @amenities = Amenity.column_names[1..8]
     @hotel.total_score = 0.0
     if @hotel.save
       flash[:success] = "New hotel added!"
