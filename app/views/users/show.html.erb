@@ -2,6 +2,7 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
+    <div class="well">
       <section class="user_info">
         <h1>
           <%= gravatar_for @user %>
@@ -11,6 +12,7 @@
           <span class="badge"><%= @user.reviews.count %></span> Reviews
         </h4>
       </section>
+      </div>
       <% if @user == current_user %>
         <ul class="nav nav-tabs">
           <li><a data-toggle="tab" href="#reviewform">Review a Hotel</a></li>

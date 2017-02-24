@@ -7,15 +7,15 @@
       <h2> <%= image_tag("map.png", :alt => "map") %> <%= @hotel.city %></h2>   
       <h2> <span class="glyphicon glyphicon-certificate"></span> Ranked <%= @hotel.rank.ordinalize %> by customers</h2><br>
       <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width:40%; background-color:#00FF00" data-toggle="tooltip" title="Positive">
+          <div class="progress-bar" role="progressbar" style="width:40%; background-color:#00C851" data-toggle="tooltip" title="Positive">
           </div>
-          <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 20%;background-color:#FFFF00" data-toggle="tooltip" title="Neutral">
+          <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 20%;background-color:#ffbb33" data-toggle="tooltip" title="Neutral">
           </div>
-          <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 10%; background-color:#FF0000"" data-toggle="tooltip" title="Negative">
+          <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 10%; background-color:#ff4444" data-toggle="tooltip" title="Negative">
           </div>
       </div>
     </div>
-    <div class="well">
+    
       Amenities : 
       <br>
       <div class="amenity">
@@ -32,7 +32,7 @@
         <%= render 'shared/review_form' %>
       </section>
     </div>
-  </div>
+  
   <div class="col-sm-5">
       <h3><%= pluralize(@hotel.reviews.count, 'Review') %> <small><span class="glyphicon glyphicon-comment"> </span></small></h3>
       <%= render 'shared/feed' %>

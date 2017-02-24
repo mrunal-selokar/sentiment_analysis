@@ -6,7 +6,7 @@
           <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
           <% if logged_in? %>
             <% if admin? %>
-              <li><%= link_to "Users", users_path %></li>
+              <li><a href="/users/"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
             <% end %>
             <li><%= link_to "Hotels", hotels_path %></li>
             <li class="dropdown">
