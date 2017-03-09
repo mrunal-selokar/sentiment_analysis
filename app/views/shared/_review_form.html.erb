@@ -11,7 +11,7 @@
   	<%= f.hidden_field :hotel_id, :value => params[:id] %> 
   	<% end %>
   	<%#= f.hidden_field :user_id, :value => params[:id] %>
-  	<span class="glyphicon glyphicon-edit"></span>
+  	<%= image_tag("comment.gif", :alt => "Comment") %>
 
     <br>
     <%= f.text_area :content, placeholder: "   Write a review...",required: "true" %>

@@ -23,15 +23,14 @@
   <%= f.submit "Log in", class: "btn btn-lg" %>
 <% end %>
     <p>New user? <button type="button" style="background-color: #fff; color: #000 !important" class="btn btn-sm" data-toggle="modal" data-target="#signUpPage">Sign Up now!</button></p>
-  			<!-- Modal -->
-  			<div class="modal fade" id="signUpPage" role="dialog">
+  			
+  			<div class="modal fade" id="signUpPage" role="dialog">  <!-- Modal -->
     			<div class="modal-dialog modal-lg">
-    
       				<!-- Modal content-->
       				<div class="modal-content">
         				<div class="modal-header">
           					<button type="button" class="close" data-dismiss="modal">&times;</button>
-          					<h1 class="modal-title"><br>Become a Member !</h1>
+          					<h2 class="modal-title"><br>Become a Member !</h2>
         				</div>
         				<div class="modal-body">
           					<%= render :file => 'users/new.html.erb' %>

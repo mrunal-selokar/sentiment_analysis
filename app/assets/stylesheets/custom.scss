@@ -11,7 +11,7 @@ $gray-medium-light: #eaeaea;
     color: #ffffff;
 }
 .well{
-  background-color: #3F729B;
+ background-color: #3F729B;
   color: #fff !important;
   a{
     color: #fff;
@@ -94,6 +94,9 @@ h4{
 h3{
   font-size: 2.1em;
 }
+h5{
+  font-size: 1.1em;
+}
 
 p {
   font-size: 1.1em;
@@ -124,10 +127,8 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: #fff;
-  background-color:#1C2331; 
   a {
-    color: #fff;
+    
     &:hover {
       color: $gray-darker;
     }
@@ -295,7 +296,7 @@ input {
     }
   }
   .timestamp {
-    color: #fff;
+    color: #000;
     display: block;
     margin-left: 60px;
   }
