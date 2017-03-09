@@ -37,13 +37,7 @@
       <h3><%= pluralize(@hotel.reviews.count, 'Review') %> <small><i class="fa fa-comments-o" aria-hidden="true"></i></small></h3>
       <%= render 'shared/feed' %>
   </div>
-  <div class="col-sm-3">
-    <div class="thumbnail">
-      <p>Photos:</p>
-      <%= image_tag("b3.jpeg", :alt => "Hotel", :style =>{'width' => "400", 'height'=>"300"}) %>
-      <p>interior</p>
-    </div>
-  </div>
+
   </div>
 <% end %>
 
