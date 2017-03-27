@@ -1,15 +1,23 @@
 <li id="review-<%=review.id %>">
- <div class="row">
-        <div class="col-sm-16">
-          <div class="well well-sm">
-          <%= link_to gravatar_for(review.user,size: 30), review.user %>
-	<span class="user"><%= link_to review.user.name, review.user %></span> |
-	<span class="hotel"><%= link_to review.hotel.name, review.hotel %></span>
-            	<span class="content" style="font-size: 1.5em;"> <i class="fa fa-quote-left fa-sm"></i> <%= review.content %> <i class="fa fa-quote-right fa-sm"></i></span>
-	<span class="timestamp">
-		<span class="glyphicon glyphicon-time"></span> Posted <%= time_ago_in_words(review.created_at) %> ago.
-	</span>
-          </div>
-        </div>
-</div>
+      <div class="comment">
+        <span class="img">
+          <span class="inner">
+            <%= link_to gravatar_for(review.user), review.user %>
+          </span>
+        </span>
+        <p>
+	        <span class="user">          
+          <%= link_to review.user.name, review.user %>
+          </span> |
+	        <span class="hotel">
+            <%= link_to review.hotel.name, review.hotel %>
+          </span><br>
+            <i class="fa fa-quote-left fa-sm"></i> 
+            <%= review.content %> 
+            <i class="fa fa-quote-right fa-sm"></i>
+	        <span class="timestamp">
+		        <span class="glyphicon glyphicon-time"></span> Posted <%= time_ago_in_words(review.created_at) %> ago.
+	        </span>
+        </p>
+      </div>
 </li>
