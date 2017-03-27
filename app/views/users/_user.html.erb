@@ -1,6 +1,6 @@
 <tr>
 	<td>
-		<%= gravatar_for user, size: 50 %>
+		<span class="avatar" ><%= image_tag(user.avatar.url(:thumb)) %></span>
   		<%= link_to user.name, user %> 
   		<% if user.admin? %> 
   			<span class="glyphicon glyphicon-user"></span> 

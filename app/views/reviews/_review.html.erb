@@ -2,7 +2,7 @@
       <div class="comment">
         <span class="img">
           <span class="inner">
-            <%= link_to gravatar_for(review.user), review.user %>
+            <span class="avatar" ><%= image_tag(current_user.avatar.url(:thumb)) %></span>
           </span>
         </span>
         <p>
@@ -12,9 +12,9 @@
 	        <span class="hotel">
             <%= link_to review.hotel.name, review.hotel %>
           </span><br>
-            <i class="fa fa-quote-left fa-sm"></i> 
-            <%= review.content %> 
-            <i class="fa fa-quote-right fa-sm"></i>
+          <i class="fa fa-quote-left fa-sm"></i> &nbsp;
+          <%= review.content %> &nbsp;
+          <i class="fa fa-quote-right fa-sm"></i>
 	        <span class="timestamp">
 		        <span class="glyphicon glyphicon-time"></span> Posted <%= time_ago_in_words(review.created_at) %> ago.
 	        </span>

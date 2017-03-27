@@ -1,26 +1,29 @@
 <%= form_for(@user||=User.new) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-<div class="input-group input-group-lg">
+  <div class="input-group input-group-lg">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <%= f.text_field :name, class: 'form-control', placeholder:'Firstname Lastname' %>
+      <%= f.text_field :name, class: 'form-control', placeholder:'Firstname Lastname' %>
   </div><br>
 
   <div class="input-group input-group-lg">
       <div class="input-group-addon"> @ </div>
       <%= f.email_field :email, class: 'form-control', placeholder:'Email' %>
-      </div><br>
-      <div class="input-group input-group-lg">
-      <span class="input-group-addon">
-      <i class="glyphicon glyphicon-lock"></i></span>
-      <%= f.password_field :password, class: 'form-control', placeholder:'Password' %>
-      </div>
-      <br>
-      <div class="input-group input-group-lg">
-      <span class="input-group-addon">
-        <i class="glyphicon glyphicon-lock"></i>
-      </span>
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder:'Confirm your password' %>
-      </div>
+  </div><br>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon">
+    <i class="glyphicon glyphicon-lock"></i></span>
+    <%= f.password_field :password, class: 'form-control', placeholder:'Password' %>
+  </div><br>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-lock"></i>
+    </span>
+    <%= f.password_field :password_confirmation, class: 'form-control', placeholder:'Confirm your password' %>
+  </div>
+  <div class="input-group input-group-lg">
+        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+            <%= f.file_field :avatar %>
+  </div>
 
   <%= f.submit yield(:button_text), class: "btn btn-lg" %>
 <% end %>

@@ -15,6 +15,7 @@ gem 'faker', '1.6.6'
 gem 'hirb'
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'paperclip', '~> 4.1'
 gem 'pry'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

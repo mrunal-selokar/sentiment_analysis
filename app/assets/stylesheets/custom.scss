@@ -18,6 +18,7 @@ $gray-medium-light: #eaeaea;
     }
 }
 
+
 /* universal */
 
 .jumbotron {
@@ -71,6 +72,7 @@ textarea {
         margin-bottom: 10px;
     }
 }
+
 
 
 /* typography */
@@ -215,14 +217,20 @@ aside {
     }
 }
 
-.gravatar {
-    float: left;
+
+.avatar{
+  float: left;
     margin-right: 10px;
     border-radius: 50%;
-}
-
-.gravatar_edit {
-    margin-top: 15px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    img{
+      max-width: 100px;
+    }
 }
 
 
@@ -328,6 +336,7 @@ input {
     }
 }
 */
+
 .comments {
     list-style: none;
     li {
@@ -343,7 +352,7 @@ input {
         margin-left: 10px;
         padding: 20px 20px 0;
     }
-    .comment .gravatar {
+    .comment .avatar {
         background-color: #fff;
         border-radius: 0 60px 60px 0;
         border: 5px solid #fff;
@@ -364,8 +373,8 @@ input {
     }
     .comment p {
         padding-bottom: 20px;
-        a{
-          color: #FFF;
+        a {
+            color: #FFF;
         }
         .user {
             margin-top: 5em;
@@ -446,7 +455,20 @@ span.picture {
 .navbar .navbar-brand {
     color: #fff !important;
 }
-
+.navbar .img-nav{
+    background-color: #1C2331;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    height:50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img {
+    max-width: 30px;
+  }
+}
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
     color: #1C2331 !important;

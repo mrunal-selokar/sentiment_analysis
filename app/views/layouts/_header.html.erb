@@ -9,7 +9,7 @@
               <li><a href="/users/"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
             <% end %>
             <li><%= link_to "Hotels", hotels_path %></li>
-            <li class="dropdown">
+            <li class="dropdown"> <!--<span class="img-nav"><%= image_tag(current_user.avatar.url(:thumb)) %></span>-->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <span class="glyphicon glyphicon-user"></span>
                 Account <b class="caret"></b>
@@ -28,4 +28,4 @@
           </ul>
       </nav>
   </div>
-</header> 
+</header>
