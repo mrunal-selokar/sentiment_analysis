@@ -4,7 +4,7 @@
   <div class="col-sm-4">
     <br>
        <h1><%= @hotel.name%></h1>
-      <h5>       <%= image_tag("map.png", :alt => "map") %> <%= @hotel.city %></h5>   
+      <h5>       <%= image_tag("map.png", :alt => "map") %> <%= @hotel.city %></h5>
       <h5> <span class="glyphicon glyphicon-certificate"></span> Ranked <%= @hotel.rank.ordinalize %> by customers</h5><br>
       <div class="progress">
           <div class="progress-bar" role="progressbar" style="width:40%; background-color:#00C851" data-toggle="tooltip" title="Positive">
@@ -14,9 +14,7 @@
           <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 10%; background-color:#ff4444" data-toggle="tooltip" title="Negative">
           </div>
       </div>
-    
-    
-      Amenities : 
+      Amenities :
       <br>
       <div class="amenity">
         <%= image_tag("wifi.png", :alt => "WiFi") %>
@@ -32,7 +30,7 @@
         <%= render 'shared/review_form' %>
       </section>
     </div>
-  
+
   <div class="col-sm-8">
       <h3><%= pluralize(@hotel.reviews.count, 'Review') %> <small><i class="fa fa-comments-o" aria-hidden="true"></i></small></h3>
       <%= render 'shared/feed' %>

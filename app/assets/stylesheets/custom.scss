@@ -16,8 +16,8 @@ $gray-medium-light: #eaeaea;
     a {
         color: #fff;
     }
+    border-radius: 25px;
 }
-
 
 /* universal */
 
@@ -136,17 +136,26 @@ p {
         text-decoration: none;
     }
 }
-
+.dropdown{
+    display: inline-block;
+}
 
 /* footer */
 
 footer {
+    background-color: #000;
+    align-self: center;
     margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid $gray-medium-light;
-    a {
+    color: #fff !important;
+    text-align: center;
+    overflow: hidden;
+    padding: 3em 0em;
+    border-top: 1px solid rgba(0,0,0,0.08);
+a {
+        text-decoration: none;
+    color: #fff !important;
         &:hover {
-            color: $gray-darker;
+            text-decoration:underline;
         }
     }
     small {

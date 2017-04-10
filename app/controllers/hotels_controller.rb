@@ -1,9 +1,13 @@
 class HotelsController < ApplicationController
 
   def index
-  	@hotels = Hotel.search(params[:search])
+  	@hotels = Hotel.all
+    #@q = Movie.includes(:actors, :producer).references(:actors, :producer).ransack(params[:q])
+    #@results=@q.result
+    @q = Hotel.includes(:reviews).references(:reviews).ransack(params[:q])
+    @results = @q.result
   end
-  
+
   def show
   	@review = current_user.reviews.build if logged_in?
   	@hotel = Hotel.find(params[:id])

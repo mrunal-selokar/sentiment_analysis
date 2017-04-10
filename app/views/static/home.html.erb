@@ -62,18 +62,22 @@
   			</div>
 		</div>
 	<% else %>
-		<% @hotels = Hotel.all %>
-		<% render 'shared/rank' %>
-		<div class="panel-group">
+	<% @hotels = Hotel.all %>
+	<% render 'shared/rank' %>
+	<div class="panel-group">
+		<div class="row">
 			<% @hotels.each do |hotel| %>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="rank"> <%= hotel.rank %> <span class="glyphicon glyphicon-certificate"></span> <%=link_to hotel.name, hotel %>
-						</div>
-		        	</div>
-		        	<div class="panel-body"><%= pluralize( hotel.reviews.count, 'Review' )%></div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="rank"> <%= hotel.rank %> <span class="glyphicon glyphicon-certificate"></span> <%=link_to hotel.name, hotel %>
+							</div>
+			        	</div>
+			        	<div class="panel-body"><%= pluralize( hotel.reviews.count, 'Review' )%></div>
+					</div>
 				</div>
 			<% end %>
 		</div>
+	</div>
 	<% end %>
 </div>

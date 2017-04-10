@@ -2,23 +2,40 @@
 <% render 'shared/rank' , hotels: @hotels %>
 
 <%provide(:title, 'All Hotels')%>
-<div class="jumbotron text-center">
-<h1>All Hotels</h1>
-</div>
-<div class="row">
-<%= form_tag hotels_path, :method =>'get' do %>
-		<%= text_field_tag :search ,params[:search], placeholder: ' Find a Hotel'%>
-		<%= submit_tag "Search" , :name =>nil %>
-<% end %>
-</div>
-<ul class="hotels">
-	<% @hotels.each do |hotel| %>
-		<div class="row">
-        	<div class="col-sm-9">
-          		<div class="well">
-          			<div class="rank"> <%= hotel.rank %> <%=link_to hotel.name, hotel %>  </div>
-				</div>
-			</div>
-		</div>		
+<div class="head">
+<h1>All Hotels</h1></div><br><br>
+<div class="form-inline row">
+	<%= search_form_for @q, url: hotels_path do |f| %>
+		<div class="form-group col-md-2">
+			<%= f.sort_link :name, 'Order by Hotel Name' %>
+		</div>
+		<div class="form-group col-md-2">
+			<%= f.sort_link :rank, 'Order by Popularity' %>
+		</div>
+		<div class="form-group col-md-3">
+		  <%= f.search_field :name_cont , placeholder: 'Search by Hotel Name..' %>
+		</div>
+		<div class="form-group col-md-3">
+		  <%= f.search_field :city_cont , placeholder: 'Search by City..' %>
+		</div>
+		<div class="col-md-2">
+		<%= f.submit %>
+		</div>
 	<% end %>
+</div><br><br>
+<ul class="hotels">
+<% if @results %>
+	<% @results.each do |hotel| %>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="h3 text-center"><%=link_to hotel.name, hotel %>&nbsp; <h4><small><%= hotel.city%></small></h4>
+					</div>
+			    </div>
+			    <div class="panel-body text-center"><%= pluralize( hotel.reviews.count, 'Review' )%></div>
+			</div>
+		</div>
+	<% end %>
+<% end %>
 </ul>
+<br>
