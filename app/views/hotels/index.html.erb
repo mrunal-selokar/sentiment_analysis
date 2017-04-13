@@ -6,6 +6,7 @@
 <h1>All Hotels</h1></div><br><br>
 <div class="form-inline row">
 	<%= search_form_for @q, url: hotels_path do |f| %>
+	
 		<div class="form-group btn col-md-2 ">
 			<%= f.sort_link :name, 'Order by Name' %>
 		</div>
@@ -19,7 +20,7 @@
 		  <%= f.search_field :city_cont , placeholder: 'Search by City..' %>
 		</div>
 		<div class="col-md-2">
-		<%= f.submit %>
+		<%= f.submit %></div>
 		</div>
 	<% end %>
 </div><br><br>
@@ -28,9 +29,6 @@
 	<% @results.each do |hotel| %>
 		<div class="col-md-4">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					
-			    </div>
 			    <div class="panel-body text-center"><div class="h3 text-center"><%=link_to hotel.name, hotel %>&nbsp; <h4><small><%= hotel.city%></small></h4>
 					</div><%= pluralize( hotel.reviews.count, 'Review' )%></div>
 			</div>

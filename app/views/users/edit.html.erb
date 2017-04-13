@@ -1,9 +1,17 @@
 <% provide(:title, 'Edit user') %>
 <% provide(:button_text, 'Save changes') %>
-<h1>Update your profile</h1>
+<h3 class="text-center">Update your profile</h3><br>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= render 'form' %>
-    <span class="avatar" ><%= image_tag(current_user.avatar.url(:thumb)) %></span>
-  </div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body text-center">
+			    <div class="h3 text-center"><%= @user.name %>&nbsp;
+			    <span class="avatar" ><%= image_tag(current_user.avatar.url(:thumb)) %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="col-md-6">
+      <%= render 'form' %>
+    </div>
 </div>

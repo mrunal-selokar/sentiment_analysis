@@ -1,14 +1,14 @@
-
+.row .col-sm-4 .panel{
+	margin-top:40px;
+}
 .head{
-	background-color: #3F729B;
-	border-radius: 5px;
 	h1{
 		padding: 20px;
 		color: #fff;
 	}
 }
 .form-inline .form-group .btn{
-	color: #3F729B;
+	color: #1C2331;
 	a{
 	color: #fff;
 	}
@@ -17,7 +17,7 @@
 .btn{
     margin: 0px;
     padding: 5px;
-    background: #f4511e;
+    background: #1C2331;
     color: #fff;
     border-radius: 2px;
     order:none;
@@ -30,4 +30,10 @@ input[type="search"] {
     padding: 6px;
     border: none;
     font-size: 16px;
+}
+
+.row .col-sm-4 .panel .panel-body .amenity .img{
+	width: 45px;
+padding: 0px;
+margin: 2px;
 }

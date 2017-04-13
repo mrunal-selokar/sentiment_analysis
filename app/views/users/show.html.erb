@@ -1,24 +1,21 @@
 <% provide(:title, @user.name) %>
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
-    <div>
-      <section class="user_info">
-        <h1>
+    <aside class="col-md-4 userinfo">
+      <div class="panel panel-default">
+      <div class="panel-body text-center">
+          <div class="h3 text-center"><%= @user.name %>&nbsp;
           <span class="avatar" ><%= image_tag(current_user.avatar.url(:thumb)) %></span>
-          <%= @user.name %> <br>
-        </h1>
-        <h4>
-          <span class="badge"><%= @user.reviews.count %></span> Reviews
-        </h4>
-      </section>
+          <h4><span class="badge"><%= @user.reviews.count %></span> Reviews </h4>
+        </div>
       </div>
+    </div>
       <% if @user == current_user %>
       <% if current_user.admin?%>
         <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#addHotel"><span class="glyphicon glyphicon-plus"></span> Add new Hotel</button>
         <div id="addHotel" class="modal fade" role="dialog">
           <div class="modal-dialog modal-sm">
-            <div class="modal-content">
+            <div class="modal-content animate">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title"><br>Add a new Hotel</h4>
@@ -35,8 +32,8 @@
       <% end %>
       <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#reviewHotel"><i class="fa fa-comment-o" aria-hidden="true"></i>  Review a Hotel</button>
         <div id="reviewHotel" class="modal fade" role="dialog">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
+          <div class="modal-dialog">
+            <div class="modal-content animate">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title"><br>Review a Hotel</h4>
