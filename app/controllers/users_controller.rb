@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  
+
   before_action :logged_in_user, only: [:edit, :update, :index, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
-  
+
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
     @review = @user.reviews.build if logged_in?
     @reviews = @user.reviews.paginate(page: params[:page])
     @feed_items = @user.feed.paginate(page: params[:page])
@@ -15,20 +15,20 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate(page: params[:page])
   end
-  
+
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
-  	@user = User.new(user_params)
-  	if @user.save
-  		log_in @user
-  		flash[:success] = "Welcome to hotel advisor!"
-  		redirect_to @user
-  	else
-  		render 'new'
-  	end
+    @user = User.new(user_params)
+    if @user.save
+      log_in @user
+      flash[:success] = "Welcome to hotel advisor!"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -53,18 +53,18 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :avatar)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+                                 :password_confirmation, :avatar)
+  end
 
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)        
-    end
-      
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
+
 end

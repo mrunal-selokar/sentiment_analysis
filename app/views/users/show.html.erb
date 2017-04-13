@@ -14,23 +14,6 @@
       </section>
       </div>
       <% if @user == current_user %>
-        <ul class="nav nav-tabs">
-          <li><a data-toggle="tab" href="#reviewform"><i class="fa fa-comment-o" aria-hidden="true"></i> Review a Hotel</a></li>
-          <% if current_user.admin?%>
-          <li><a data-toggle="tab" href="#hotelform">Add New Hotel</a></li><% end %>
-        </ul>
-        <div class="tab-content">
-        <div id="reviewform" class="tab-pane fade">
-          <section class="review_form">
-            <%= render 'shared/review_form' %>
-          </section>
-        </div>
-        <div id="hotelform" class="tab-pane fade">
-          <section class="review_form">
-            <%= render 'shared/hotel_form' %>
-          </section>
-        </div>
-      </div>
       <% if current_user.admin?%>
         <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#addHotel"><span class="glyphicon glyphicon-plus"></span> Add new Hotel</button>
         <div id="addHotel" class="modal fade" role="dialog">
@@ -38,7 +21,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add a new Hotel</h4>
+                <h4 class="modal-title"><br>Add a new Hotel</h4>
               </div>
               <div class="modal-body">
                 <%= render 'shared/hotel_form'%>
@@ -50,6 +33,23 @@
           </div>
         </div>
       <% end %>
+      <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#reviewHotel"><i class="fa fa-comment-o" aria-hidden="true"></i>  Review a Hotel</button>
+        <div id="reviewHotel" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><br>Review a Hotel</h4>
+              </div>
+              <div class="modal-body">
+                <%= render 'shared/review_form'%>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
 
     </aside>
